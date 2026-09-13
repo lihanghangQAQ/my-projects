@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Projects</title>
+<meta name="description" content="项目代码与在线预览集合">
+<style>
+  :root{
+    --bg:#0d1117;
+    --panel:#161b22;
+    --panel-2:#1c2128;
+    --border:#30363d;
+    --fg:#e6edf3;
+    --fg-dim:#8b949e;
+    --accent:#58a6ff;
+    --accent-2:#3fb950;
+    --radius:12px;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#ffffff;
+      --panel:#f6f8fa;
+      --panel-2:#eaeef2;
+      --border:#d0d7de;
+      --fg:#1f2328;
+      --fg-dim:#656d76;
+      --accent:#0969da;
+      --accent-2:#1a7f37;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",Roboto,sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:64px 24px;flex:1;width:100%}
+  header{margin-bottom:48px}
+  h1{font-size:2.25rem;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+  h1 .dot{color:var(--accent)}
+  .sub{color:var(--fg-dim);font-size:1.05rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:20px;
+    transition:border-color .15s ease,transform .15s ease;
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card h2{font-size:1rem;font-weight:600;margin-bottom:8px}
+  .card p{color:var(--fg-dim);font-size:.875rem}
+  .badge{
+    display:inline-block;
+    font-size:.7rem;
+    font-weight:600;
+    padding:2px 8px;
+    border-radius:999px;
+    background:var(--panel-2);
+    border:1px solid var(--border);
+    color:var(--fg-dim);
+    margin-bottom:10px;
+  }
+  .badge.live{color:var(--accent-2);border-color:var(--accent-2)}
+  .empty{
+    border:1px dashed var(--border);
+    border-radius:var(--radius);
+    padding:32px;
+    text-align:center;
+    color:var(--fg-dim);
+    font-size:.9rem;
+  }
+  footer{
+    border-top:1px solid var(--border);
+    padding:24px;
+    text-align:center;
+    color:var(--fg-dim);
+    font-size:.8rem;
+  }
+  footer a{color:var(--accent);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>My Projects<span class="dot">.</span></h1>
+    <p class="sub">项目代码集合 · 静态页面由 GitHub Pages 自动部署</p>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <span class="badge live">已部署</span>
+      <h2>站点首页</h2>
+      <p>当前页面。push 到 main 分支后由 GitHub Actions 自动发布。</p>
+    </div>
+    <div class="card">
+      <span class="badge">待添加</span>
+      <h2>新项目</h2>
+      <p>把子目录放进仓库，即可通过 /子目录名/ 访问。</p>
+    </div>
+  </div>
+
+  <div class="empty" style="margin-top:24px">
+    还没有更多项目。往仓库里添加文件夹即可，Pages 会自动同步。
+  </div>
+</div>
+
+<footer>
+  Powered by <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+</footer>
+</body>
+</html>
