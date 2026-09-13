@@ -1,8 +1,17 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (manual)
+
+# 当前仓库使用「Deploy from a branch」模式发布，本工作流默认不自动运行，
+# 避免每次 push 产生失败记录。
+#
+# 将来若要改用 Actions 发布（例如项目需要 Vite/React 构建）：
+#   1. Settings → Pages → Source 改为 "GitHub Actions"
+#   2. Settings → Environments → github-pages → Deployment branches and tags → All branches
+#   3. 把下面的 push 触发器取消注释
+#   4. 需要手工发布时，在 Actions 页点 "Run workflow" 即可
 
 on:
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   workflow_dispatch:
 
 permissions:
